@@ -1,0 +1,68 @@
+@import '../../../../theme.scss';
+.contacts-container {
+    @include themify($themes) {
+        display: grid;
+        grid-template-rows: 15% 85%;
+        overflow: hidden;
+        background-color: #fff;
+        border-right: 1px solid themed('border');
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            justify-content: center;
+            background-color: themed('bg');
+            img {
+                height: 2rem;
+            }
+            h3 {
+                color: themed('textColorSoft');
+                text-transform: uppercase;
+            }
+        }
+        .contacts {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            overflow: auto;
+            gap: 0.8rem;
+            background-color: themed('bg');
+            &::-webkit-scrollbar {
+                width: 0.2rem;
+                &-thumb {
+                    background-color: themed('bg');
+                    width: 0.1rem;
+                    border-radius: 1rem;
+                }
+            }
+            .contact {
+                background-color: themed('bg');
+                min-height: 5rem;
+                cursor: pointer;
+                width: 90%;
+                border-radius: 0.2rem;
+                padding: 0.4rem;
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                transition: 0.5s ease-in-out;
+                .avatar {
+                    img {
+                        width: 50px;
+                        height: 3rem;
+                        object-fit: cover;
+                    }
+                }
+                .username {
+                    h3 {
+                        color: themed('textColor');
+                    }
+                }
+            }
+            .selected {
+                background-color: #9a86f3;
+            }
+        }
+    }
+}

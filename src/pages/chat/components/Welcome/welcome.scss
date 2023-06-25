@@ -1,0 +1,17 @@
+@import '../../../../theme.scss';
+.welcome {
+    @include themify($themes) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: themed('textColor');
+        flex-direction: column;
+        background-color: themed('bg');
+        img {
+            height: 20rem;
+        }
+        span {
+            color: #4e0eff;
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@import '../../theme.scss';
+.navbar {
+    @include themify($themes) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 30px;
+        height: 50px;
+        border-bottom: 1px solid themed('border');
+        position: sticky;
+        top: 0;
+        background-color: themed('bg');
+        color: themed('textColor');
+        z-index: 999;
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            span {
+                font-weight: bold;
+                font-size: 20px;
+                color: themed('logo');
+            }
+            .list-language{
+                -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+                -moz-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+                box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.09);
+                position: absolute;
+                top: 40px;
+                left: 230px;
+                width: 100px;
+                border: 1px solid lightgrey;
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                .lang-title{
+                    padding: 5px 10px ;
+                    font-size: 14px;
+                    color: black;
+                    cursor: pointer;
+                    border-bottom: 1px solid lightgray;
+                    &:hover{
+                        background-color: rgba(225, 221, 221, 0.453);
+                    }
+                }
+            }
+            .search-result {
+                width: 400px;
+                h3 {
+                    font-size: 16px;
+                    font-weight: 500;
+                    padding: 0 10px;
+                }
+            }
+            .search {
+                display: flex;
+                align-items: center;
+                width: 400px;
+                gap: 10px;
+                border: 1px solid themed('border');
+                border-radius: 5px;
+                padding: 5px;
+
+                input {
+                    outline: none;
+                    border: none;
+                    width: 500px;
+                    background-color: transparent;
+                    color: themed('textColor');
+
+                    @include mobile {
+                        display: none;
+                    }
+
+                    @include tablet {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+        .right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            @include mobile {
+                display: none;
+            }
+            .user {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                @include tablet {
+                    display: none;
+                }
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 30%;
+                    object-fit: cover;
+                }
+                span {
+                }
+            }
+        }
+    }
+}
